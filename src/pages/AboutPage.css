@@ -1,0 +1,76 @@
+.about__stats,
+.about__values,
+.about__team,
+.about__testi,
+.about__posts {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .about__stats,
+  .about__values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .about__team {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .about__testi {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about__stat-num {
+  display: block;
+  font-size: 3rem;
+  font-family: var(--font-serif);
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.about__val svg {
+  width: 48px;
+  height: 48px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.about__quote {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.about__quote p {
+  font-size: 1.125rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.about__quote footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__quote strong {
+  color: var(--gold);
+}
+
+.about__quote span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.about__actions {
+  margin-top: 3rem;
+  text-align: center;
+}

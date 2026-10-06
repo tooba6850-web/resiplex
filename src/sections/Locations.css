@@ -1,0 +1,18 @@
+.loc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+  margin-top: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+@media (max-width: 1080px) {
+  .loc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .loc-grid {
+    grid-template-columns: 1fr;
+  }
+}

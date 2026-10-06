@@ -1,0 +1,259 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  transition:
+    background-color 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    backdrop-filter 0.4s var(--ease);
+}
+
+.nav--solid {
+  /* No longer needed, always solid */
+}
+
+.nav__inner {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+}
+
+.nav__link {
+  position: relative;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  padding-block: 0.5rem;
+  transition: color 0.3s var(--ease);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease);
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  color: var(--text);
+}
+
+.nav__link:hover::after,
+.nav__link.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.nav__icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: var(--text-2);
+  transition:
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.nav__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.nav__icon:hover,
+.nav__icon.is-active {
+  color: var(--gold-bright);
+}
+
+.nav__icon:hover {
+  border-color: var(--line-2);
+}
+
+.nav__count {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  min-width: 17px;
+  height: 17px;
+  padding-inline: 4px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 0.62rem;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+.nav__cta {
+  padding-block: 0.68rem;
+}
+
+.nav__burger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--text);
+}
+
+.nav__burger svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Mobile panel ---------- */
+
+.nav__panel {
+  position: fixed;
+  inset: var(--nav-h) 0 0;
+  background:
+    radial-gradient(900px 500px at 90% 0%, rgba(37, 99, 235, 0.09), transparent 60%),
+    var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-14px);
+  transition:
+    opacity 0.4s var(--ease),
+    transform 0.4s var(--ease),
+    visibility 0.4s;
+  overflow-y: auto;
+}
+
+.nav__panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+.nav__panel-inner {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-block: clamp(2.5rem, 8vh, 5rem) 3rem;
+}
+
+.nav__panel-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__panel-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 9vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-2);
+  padding-block: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transform: translateY(16px);
+  animation: panel-item 0.5s var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+  transition: color 0.3s var(--ease);
+}
+
+.nav__panel-link:hover,
+.nav__panel-link.active {
+  color: var(--gold-bright);
+}
+
+.nav__panel-index {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.nav__panel-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  opacity: 0;
+  animation: panel-item 0.5s var(--ease) 0.5s forwards;
+}
+
+.nav__panel-foot a:hover {
+  color: var(--gold-bright);
+}
+
+@keyframes panel-item {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__burger {
+    display: grid;
+  }
+
+  .nav__cta {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__inner {
+    gap: 0.7rem;
+  }
+
+  .nav__actions {
+    gap: 0.35rem;
+  }
+
+  .logo__word {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+  }
+
+  .logo__mark {
+    width: 29px;
+    height: 29px;
+  }
+}

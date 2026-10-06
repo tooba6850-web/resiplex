@@ -1,0 +1,42 @@
+.about-band {
+  background: var(--bg-2);
+  border-block: 1px solid var(--line);
+}
+
+.about-band__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.about-band__mark {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-bright);
+}
+
+.about-band__mark svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-band__quote {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+  line-height: 1.2;
+  max-width: 22ch;
+  color: var(--text);
+}
+
+.about-band__sub {
+  max-width: 52ch;
+  color: var(--muted);
+  font-weight: 300;
+}

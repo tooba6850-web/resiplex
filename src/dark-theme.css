@@ -1,0 +1,49 @@
+:root.dark-theme {
+  /* Surfaces */
+  --bg: #0b0a08;
+  --bg-2: #0f0e0c;
+  --surface: #15130f;
+  --surface-2: #1b1915;
+  --surface-3: #24211b;
+
+  /* Lines */
+  --line: rgba(243, 238, 229, 0.1);
+  --line-2: rgba(243, 238, 229, 0.2);
+
+  /* Typography */
+  --text: #f2ede3;
+  --text-2: #c9c1b3;
+  --muted: #8e8677;
+  --muted-2: #66604f;
+
+  /* Accents */
+  --gold: #b8925a;
+  --gold-bright: #cdab72;
+  --gold-deep: #8f6f3a;
+  --gold-soft: rgba(184, 146, 90, 0.12);
+
+  /* Feedback */
+  --success: #93b28f;
+  --error: #cf8b6f;
+
+  /* Misc */
+  --shadow: 0 24px 60px -32px rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 10px 30px -22px rgba(0, 0, 0, 0.6);
+}
+
+html.dark-theme body {
+  background: radial-gradient(1100px 520px at 85% -10%, rgba(184, 146, 90, 0.04), transparent 60%), var(--bg);
+}
+
+html.dark-theme .nav {
+  background: var(--bg);
+}
+
+html.dark-theme .contact-form, 
+html.dark-theme .footer,
+html.dark-theme .prop-card,
+html.dark-theme .blog-card,
+html.dark-theme .hero__search {
+  background: var(--surface);
+  border-color: var(--line);
+}

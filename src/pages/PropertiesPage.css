@@ -1,0 +1,191 @@
+.props {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.props__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1.8rem 0 1.5rem;
+}
+
+.props__count {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.props__count b {
+  color: var(--text);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.props__controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.props__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.props__sort-label {
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.props__sort select {
+  appearance: none;
+  background-color: var(--surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23b8925a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 0.62rem 2.3rem 0.62rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease);
+}
+
+.props__sort select:hover,
+.props__sort select:focus-visible {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.props__view {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.props__view-btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--muted);
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.props__view-btn + .props__view-btn {
+  border-left: 1px solid var(--line);
+}
+
+.props__view-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.props__view-btn:hover {
+  color: var(--gold-bright);
+}
+
+.props__view-btn.is-active {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* Empty state */
+
+.props__empty {
+  text-align: center;
+  padding: 4.5rem 1rem;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.props__empty-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.props__empty-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.props__empty h3 {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.props__empty p {
+  color: var(--muted);
+  max-width: 40ch;
+}
+
+.props__empty-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.1rem;
+}
+
+/* Bottom CTA strip */
+
+.props__cta {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.props__cta-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--gold-bright);
+}
+
+.props__cta-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.props__cta p {
+  color: var(--text-2);
+  font-size: 0.96rem;
+}
+
+@media (max-width: 640px) {
+  .props__toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

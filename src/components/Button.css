@@ -1,0 +1,127 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 1.05rem 2.15rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition:
+    background-color 0.32s var(--ease),
+    color 0.32s var(--ease),
+    border-color 0.32s var(--ease),
+    box-shadow 0.32s var(--ease),
+    transform 0.32s var(--ease);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+.btn--sm {
+  padding: 0.7rem 1.45rem;
+  font-size: 0.7rem;
+}
+
+/* Ink on cream — signature */
+.btn--primary {
+  background: var(--ink);
+  color: var(--cream);
+  box-shadow: 0 12px 26px -16px rgba(20, 18, 15, 0.55);
+}
+
+.btn--primary:hover {
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 16px 30px -18px rgba(176, 141, 87, 0.6);
+}
+
+/* Cream on dark */
+.btn--light {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.btn--light:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* Solid gold accent */
+.btn--gold {
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 12px 26px -16px rgba(176, 141, 87, 0.65);
+}
+
+.btn--gold:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* Ghost on light */
+.btn--outline {
+  background: transparent;
+  border-color: rgba(20, 18, 15, 0.3);
+  color: var(--ink);
+}
+
+.btn--outline:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+/* Ghost on dark */
+.btn--outline-light {
+  background: transparent;
+  border-color: rgba(250, 247, 242, 0.45);
+  color: var(--cream);
+}
+
+.btn--outline-light:hover {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+}
+
+/* Arrow micro-interaction */
+.btn__arrow {
+  display: inline-flex;
+  transition: transform 0.32s var(--ease);
+}
+
+.btn__arrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn--arrow:hover .btn__arrow {
+  transform: translateX(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover {
+    transform: none;
+  }
+
+  .btn--arrow:hover .btn__arrow {
+    transform: none;
+  }
+}

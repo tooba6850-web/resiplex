@@ -1,0 +1,80 @@
+.agent-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.agent-card__top {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.agent-card__top img {
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  flex: 0 0 auto;
+}
+
+.agent-card__label {
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.agent-card__name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0.3rem;
+}
+
+.agent-card__role {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.agent-card__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.agent-card__contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-2);
+  transition: color 0.3s var(--ease);
+  overflow-wrap: anywhere;
+}
+
+.agent-card__contact svg {
+  width: 15px;
+  height: 15px;
+  color: var(--gold);
+  flex: 0 0 auto;
+}
+
+.agent-card__contact a:hover {
+  color: var(--gold-bright);
+}
+
+.agent-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
